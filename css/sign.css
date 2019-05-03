@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alegreya', serif;
+    background: #333;
+}
+
+.forma {
+    width: 25rem;
+    padding: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.forma h1 {
+    text-transform: uppercase;
+}
+
+.forma input[type = "text"],
+.forma input[type = "email"],
+.forma input[type = "password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: .1rem auto;
+    text-align: center;
+    border: .1rem solid #3498db;
+    padding: .9rem .7rem;
+    width: 15rem;
+    outline: none;
+    color: #fff;
+    border-radius: 2rem;
+    transition: 0.25s;
+}
+
+.forma input[type = "text"]:focus,
+.forma input[type = "email"]:focus,
+.forma input[type = "password"]:focus {
+    width: 17rem;
+    border: .1rem solid #562;
+}
+
+.forma input[type = "submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: .5rem auto;
+    text-align: center;
+    border: .1rem solid #960505;
+    padding: .9rem 2rem;
+    width: 12rem;
+    outline: none;
+    color: #fff;
+    border-radius: 2rem;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.forma input[type = "submit"]:hover {
+    background: #960505;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
