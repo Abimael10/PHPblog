@@ -13,7 +13,7 @@ if(isset($_POST)) {
     //Recoger los valores del formulario de registro
     $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
     $apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : false;
-    $email = isset($_POST['email']) ? mysqli_real_escape_string($db, $_POST['email']) : false;
+    $email = isset($_POST['email']) ? mysqli_real_escape_string($db, trim($_POST['email'])) : false;
     $password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : false;
 
     //Array de errores
@@ -61,7 +61,7 @@ if(isset($_POST)) {
         $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
 
         //Insertar usuario de la tabla Usuarios de la base de datos
-        $sql = "INSERT INTO usuarios VALUES(null, '$nombre', '$apellidos', '$email', '$password_segura', null);";
+        $sql = "INSERT INTO usuarios VALUES(null, '$nombre', '$apellidos', '$email', '$password_segura');";
         $guardar = mysqli_query($db, $sql);
 
         if($guardar) {
